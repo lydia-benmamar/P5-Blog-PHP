@@ -1,0 +1,21 @@
+{
+  "name": "p5-blog-php",
+  "description": "Blog pour le projet OC",
+  "keywords": [
+    "template",
+    "mvc"
+  ],
+  "license": "MIT",
+  "main": "index.php",
+  "homepage": "https://lydiab.ovh/P5-Blog-PHP",
+  "repository": "github:lydia-benmamar/P5-Blog-PHP",
+  "bugs": "https://github.com/lydia-benmamar/P5-Blog-PHP/issues",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2"
+  },
+  "author": {
+    "name": "Lydia Benmamar",
+    "email": "lydia.benmamar@gmail.com",
+    "url": "https://lydiab.ovh"
+  }
+}
