@@ -1,0 +1,47 @@
+{
+  "name": "lydia-benmamar/P5-Blog-PHP",
+  "version": "0.1.0",
+  "type": "project",
+  "description": "project openclassroom DA PHP Blog",
+  "keywords": [
+    "pedagogic",
+    "template",
+    "web",
+    "application",
+    "php",
+    "mvc"
+  ],
+  "homepage": "https://lydia.ovh/p5-blog-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lydia BENMAMAR",
+      "email": "lydia.benmamar@gmail.com",
+      "homepage": "https://lydiab.ovh",
+      "role": "Lead Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "require": {
+    "php": "7.2",
+    "twig/twig": "^2.12.1"
+  },
+  "require-dev": {
+    "tracy/tracy": "^2.7.0"
+  },
+  "config": {
+    "platform": {
+      "php": "7.2"
+    }
+  },
+  "support": {
+    "email": "lydia.benmamar@gmail.com",
+    "issues": "https://github.com/lydia-benmamar/P5-Blog-PHP/issues",
+    "wiki": "https://github.com/lydia-benmamar/P5-Blog-PHP/wiki",
+    "source": "https://github.com/lydia-benmamar/P5-Blog-PHP"
+  }
+}
