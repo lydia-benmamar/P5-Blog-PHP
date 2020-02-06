@@ -8,28 +8,21 @@
     <meta http-equiv="X-UA-Compatible"  content="IE=edge">
 
 
-    <title>{% block title %}Home - PHP MVC{% endblock %}</title>
+    <title>{% block title %}Home - P5 Blog PHP{% endblock %}</title>
 
-    <link rel="canonical" href="{% block canonical %}https://php-mvc.philippebeck.net{% endblock %}">
+    <link rel="canonical" href="{% block canonical %}https://lydiab.ovh/p5-blog-php{% endblock %}">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
-        <meta name="description"                content="{% block description %}Homepage of the PHP-MVC project{% endblock %}">
-        <meta name="author"                     content="Philippe Beck">
+        <meta name="description"                content="{% block description %}Homepage of the P5-blog-php{% endblock %}">
+        <meta name="author"                     content="Lydia B">
         <meta name="copyright"                  content="MIT">
 
         <meta property="og:type"        content="website">
         <meta property="og:title"       content="{{ block('title') }}">
         <meta property="og:url"         content="{{ block('canonical') }}">
         <meta property="og:description" content="{{ block('description') }}">
-        <meta property="og:image"       content="{% block image %}https://php-mvc.philippebeck.net/img/bg.jpg{% endblock %}">
 
-        <meta name="twitter:card"           content="summary">
-        <meta name="twitter:title"          content="{{ block('title') }}">
-        <meta name="twitter:site"           content="{{ block('canonical') }}">
-        <meta name="twitter:description"    content="{{ block('description') }}">
-        <meta name="twitter:image"          content="{{ block('image') }}">
-        <meta name="twitter:creator"        content="@philippepjbeck">
-
+         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Text+Me+One%7cCinzel:400,700,900%7cShare+Tech+Mono">
         <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 
@@ -40,15 +33,26 @@
 <header>
     <h1>
         <i class="fab fa-php fa-fw fa-lg" aria-hidden="true"></i>
-        PHP-MVC
+        P5 Blog PHP
     </h1>
+    {{ include('layout/navbar.twig') }}
 </header>
+
+
+
+
+
+{% block main %}{% endblock %}
+
+
+
 
 <main>
 </main>
 
 <footer>
-    <a href="https://github.com/philippebeck/php-mvc/blob/master/LICENSE">MIT 2019 - Philippe Beck</a>
+    {{ include('layout/footer.twig') }}
+
 </footer>
 </body>
 </html>

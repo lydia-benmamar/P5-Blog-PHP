@@ -6,9 +6,9 @@
     <meta name="viewport"               content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible"  content="IE=edge">
 
-    <title>{% block title %}{{ block('subtitle') }} - PHP MVC{% endblock %}</title>
+    <title>{% block title %}{{ block('subtitle') }} - P5 Blog PHP{% endblock %}</title>
 
-    <link rel="canonical" href="{% block canonical %}https://php-mvc.philippebeck.net{% endblock %}"> /*a modifier*/
+
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
     <meta name="description"                content="{{ block('description') }}">
@@ -19,7 +19,7 @@
     <meta property="og:title"       content="{{ block('title') }}">
     <meta property="og:url"         content="{{ block('canonical') }}">
     <meta property="og:description" content="{{ block('description') }}">
-    <meta property="og:image"       content="{% block image %}https://php-mvc.philippebeck.net/img/bg.jpg{% endblock %}"> /*a modifier*/
+
     <meta name="twitter:card"           content="summary">
     <meta name="twitter:title"          content="{{ block('title') }}">
     <meta name="twitter:site"           content="{{ block('canonical') }}">
@@ -34,18 +34,13 @@
 </head>
 
 <body>
-
     {{ include('layout/navbar.twig') }}
 
-    <header>
-        <h1>{{ block('title') }}</h1>
-    </header>
 
     {% block main %}{% endblock %}
 
     {{ include('layout/footer.twig') }}
 
-    <script src="js/script.js"></script>
 
 </body>
 </html>
