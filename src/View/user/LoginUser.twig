@@ -1,4 +1,4 @@
-# *************************** #}
+{# *************************** #}
 {# ***** LOGIN USER VIEW ***** #}
 {# *************************** #}
 
@@ -17,7 +17,7 @@
         <!-- Login User Section -->
         <section>
 
-            <form action="{{ url('user!login')}}" method="post">
+            <form action="index.php?access=user!login" method="post">
 
                 <fieldset>
                     <legend><i class="fa fa-lock" aria-hidden="true"></i> Connexion au compte utilisateur</legend>
@@ -37,9 +37,9 @@
 
                         <!-- Controls buttons -->
                         <li class="btn-group">
-                            <a class="btn delete-btn outset-slight inset-blur" href="./">Annulation</a>
-                            <input class="btn cancel-btn outset-slight inset-blur" type="reset" value="Correction">
-                            <input class="btn valid-btn outset-slight inset-blur" type="submit" value="Connexion">
+                            <a class="btn btn-secondary btn-lg" href="index.php?access=index.php">Annulation</a>
+                            <input class="btn btn-secondary btn-lg" type="submit" value="Connexion">
+                            <a class="btn btn-secondary btn-lg" href="index.php?access=user!create">Créez votre compte</a>
                         </li>
                     </ul>
                 </fieldset>
