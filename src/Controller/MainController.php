@@ -1,6 +1,5 @@
 <?php
 namespace App\Controller;
-use App\Controller\Extension\PhpMvcExtension;
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;

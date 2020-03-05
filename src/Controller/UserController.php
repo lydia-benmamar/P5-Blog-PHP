@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use src\Controller\MainController;
-use src\Model\Factory\ModelFactory;
+use App\Controller\MainController;
+use App\Model\Factory\ModelFactory;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -22,7 +22,7 @@ class UserController extends MainController
      */
     public function loginMethod()
     {
-        if (!empty($this->post->getPostArray())) {
+        if (!empty($_POST)) {
 
             $user = ModelFactory::getModel('User')->readData($this->post->getPostVar('email'), 'email');
 
