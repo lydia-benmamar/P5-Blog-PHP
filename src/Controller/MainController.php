@@ -29,17 +29,7 @@ abstract class MainController
         ));
         $this->twig->addExtension(new DebugExtension());
     }
-    /**
-     * Returns the Page URL
-     * @param string $page
-     * @param array $params
-     * @return string
-     */
-    public function url(string $page, array $params = [])
-    {
-        $params['access'] = $page;
-        return 'index.php?' . http_build_query($params);
-    }
+
     /**
      * Redirects to another URL
      * @param string $page
@@ -47,20 +37,8 @@ abstract class MainController
      */
     public function redirect(string $page, array $params = [])
     {
-        header('Location: ' . $this->url($page, $params));
+        $params['access'] = $page;
+        header('Location: index.php?' . http_build_query($params));
         exit;
-    }
-    /**
-     * Renders the Views
-     * @param string $view
-     * @param array $params
-     * @return string
-     * @throws LoaderError
-     * @throws RuntimeError
-     * @throws SyntaxError
-     */
-    public function render(string $view, array $params = [])
-    {
-        return $this->twig->render($view, $params);
     }
 }
