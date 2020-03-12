@@ -41,7 +41,7 @@ class UserController extends MainController
             }
             $this->cookie->createAlert('Authentification échouée !');
         }
-        return $this->render('user/loginUser.twig');
+        return $this->twig->render('user/loginUser.twig');
     }
 
     public function logoutMethod()
@@ -59,24 +59,18 @@ class UserController extends MainController
      */
     public function createMethod()
     {
-        if (!empty($this->post->getPostArray())) {
-            $user = ModelFactory::getModel('User')->readData($this->post->getPostVar('email'), 'email');
+        if (!empty($_POST)) {
+            $user = ModelFactory::getModel('User')->readData($_POST['email'], 'email');
 
-            if (empty($user) == false) {
-                $this->cookie->createAlert('Il existe déjà un compte utilisateur avec cette adresse e-mail');
-            }
-
-            $data['image']  = $this->files->uploadFile('img/user');
-            $data['pass']   = password_hash($this->post->getPostVar('pass'), PASSWORD_DEFAULT);
-            $data['name']   = $this->post->getPostVar('name');
-            $data['email']  = $this->post->getPostVar('email');
+            $data['pass']   = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+            $data['name']   = $_POST['name'];
+            $data['email']  = $_POST['email'];
 
             ModelFactory::getModel('User')->createData($data);
-            $this->cookie->createAlert('Nouvel utilisateur créé avec succès !');
 
             $this->redirect('home');
         }
-        return $this->render('user/createUser.twig');
+        return $this->twig->render('user/createUser.twig');
     }
 
     /**
@@ -104,7 +98,7 @@ class UserController extends MainController
         }
         $user = ModelFactory::getModel('User')->readData($this->get->getGetVar('id'));
 
-        return $this->render('user/updateUser.twig', ['user' => $user]);
+        return $this->twig->render('user/updateUser.twig', ['user' => $user]);
     }
 
     public function deleteMethod()
