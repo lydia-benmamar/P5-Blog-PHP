@@ -2,22 +2,32 @@
 
 {% block subtitle %}Home{% endblock %}
 
-{% block description %}Homepage of the PHP-MVC project{% endblock %}
+{% block description %}Homepage of Blog PHP{% endblock %}
 
 {% block main %}
 <main id="home">
-    <section>
-        <h2>Introduction</h2>
 
-        <p>This project is a pedagogic template to start a Web application with a PHP MVC architecture...</p>
-        <p>You will find the documentation <a href="https://github.com/philippebeck/php-mvc/wiki">here</a>...</p>
-        <p>Don't hesitate to send <a href="https://github.com/philippebeck/php-mvc/issues">issues</a> or <a href="https://github.com/philippebeck/php-mvc/pulls">pull requests</a>, I will watch them with interest...</p>
+    <figure class="col-lg-12" >
+            <img id= photo_profil src="images/photoprofil.jpg" alt="ma photo">
+    </figure>
+
+    <section>
+        <h2>BIENVENUE</h2>
+
+        <p>Ceci est mon premier blog</p>
+
     </section>
 
     <section>
-        <h2>Demonstration</h2>
-
-        <p>The example users are :</p>
+        <h2>Derniers articles</h2>
+        <ul>
+                <li>
+                    1er article
+                </li>
+        </ul>
+    </section>
+    <section>
+        <h2> Derniers utlisateurs inscrits</h2>
         <ul>
             {% for user in allUsers %}
                 <li>

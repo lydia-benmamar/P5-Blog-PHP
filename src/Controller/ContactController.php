@@ -9,7 +9,7 @@ use Twig\Error\SyntaxError;
  * Manages the Homepage
  * @package App\Controller
  */
-class HomeController extends MainController
+class ContactController extends MainController
 {
     /**
      * Renders the View Home
@@ -20,7 +20,6 @@ class HomeController extends MainController
      */
     public function defaultMethod()
     {
-        $allUsers = ModelFactory::getModel('User')->listData();
-        return $this->twig->render('home.twig', ['allUsers' => $allUsers]);
+        return $this->twig->render('layout/ContactForm.twig');
     }
 }

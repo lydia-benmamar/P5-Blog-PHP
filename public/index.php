@@ -4,6 +4,11 @@ use App\Router;
 use Tracy\Debugger;
 /* Required call to load the classes with the Composer Autoload */
 require_once '../vendor/autoload.php';
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 /* Create the router */
 $router = new Router();
 /* Test Zone (uncomment Debugger to get Tracy & var_dump to get router object) */
