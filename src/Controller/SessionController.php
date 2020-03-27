@@ -19,10 +19,6 @@ class SessionController
     public function __construct()
     {
         $this->session = filter_var_array($_SESSION);
-
-        if (isset($this->session['user'])) {
-            $this->session['user'] = $this->session['user'];
-        }
     }
 
     /**
@@ -57,7 +53,7 @@ class SessionController
     {
         if (array_key_exists('user', $this->session)) {
 
-            if (!empty($this->user)) {
+            if (!empty($this->session['user'])) {
 
                 return true;
             }
@@ -72,7 +68,7 @@ class SessionController
     public function getUserVar($var)
     {
         if ($this->isLogged() === false) {
-            $this->user[$var] = null;
+            $this->session['user'][$var] = null;
         }
 
         return $this->session['user'][$var];
