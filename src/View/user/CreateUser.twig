@@ -13,63 +13,23 @@
 {% block main %}
 
     <main>
-            <form action="index.php?access=user!create" method="post" enctype="multipart/form-data">
+            <form action="index.php?access=user!create" method="post">
 
             <fieldset>
-                <legend><i class="fa fa-id-card"></i> Identité</legend>
+                <legend><i class="fa fa-id-card"></i> Créer un utilisateur</legend>
                 <ul>
 
-                    <!-- First name field -->
+
+                    <!-- Name field -->
                     <li>
-                        <label for="first_name">Prénom</label>
-                        <input id="first_name" name="first_name" type="text" placeholder="Prénom usuel" maxlength="20" required>
+                        <label for="name">Nom</label>
+                        <input id="name" name="name" type="text" placeholder="Nom" maxlength="20" required>
                     </li>
-
-                    <!-- Last name field -->
-                    <li>
-                        <label for="last_name">Nom</label>
-                        <input id="last_name" name="last_name" type="text" placeholder="Nom de famille" maxlength="20" required>
-                    </li>
-
-                    <!-- User avatar restriction -->
-                    <input name="MAX_FILE_SIZE" type="hidden" value="5000000" />
-
-                    <!-- Article avatar field -->
-                    <li>
-                        <label for="file">Photo</label>
-                        <input id="file" name="file" type="file" accept=".jpg, .jpeg, .png, .svg, .gif">
-                    </li>
-
-                </ul>
-            </fieldset>
-
-            <fieldset>
-                <legend><i class="fa fa-compass"></i> Localisation</legend>
-                <ul>
-
-                    <!-- Zipcode field -->
-                    <li>
-                        <label for="zipcode">Code Postal</label>
-                        <input id="zipcode" name="zipcode" type="text" inputmode="numeric" placeholder="Lieu de résidence" minlength="5" maxlength="5" required>
-                    </li>
-
-                    <!-- Country field -->
-                    <li>
-                        <label for="country">Pays</label>
-                        <input id="country" name="country" type="text" placeholder="Pays de résidence" maxlength="20" required>
-                    </li>
-
-                </ul>
-            </fieldset>
-
-            <fieldset>
-                <legend><i class="fa fa-lock"></i> Authentification</legend>
-                <ul>
 
                     <!-- Champ Email -->
                     <li>
                         <label for="email">Email</label>
-                        <input id="email" name="email" type="email" placeholder="Addresse email" maxlength="50" minlength="5" required>
+                        <input id="email" name="email" type="email" placeholder="Adresse email" maxlength="50" minlength="5" required>
                     </li>
 
                     <!-- Champ Mot de Passe -->
@@ -87,10 +47,6 @@
 
                 </ul>
             </fieldset>
-
-            <!-- User date field -->
-            <input name="date" type="hidden" value="{{ date()|date('Y-m-d H:i:s') }}">
-
-        </form>
+            </form>
     </main>
 {% endblock %}
