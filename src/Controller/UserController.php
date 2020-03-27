@@ -31,10 +31,9 @@ class UserController extends MainController
                 $this->session->createSession(
                     $user['id'],
                     $user['name'],
-                    $user['image'],
-                    $user['email']
+                    $user['email'],
+                    $user['admin']
                 );
-
 
                 $this->redirect('home');
             }
@@ -63,6 +62,7 @@ class UserController extends MainController
             $data['pass']   = password_hash($_POST['pass'], PASSWORD_DEFAULT);
             $data['name']   = $_POST['name'];
             $data['email']  = $_POST['email'];
+            $data['admin']  = false;
 
             ModelFactory::getModel('User')->createData($data);
 
@@ -81,27 +81,22 @@ class UserController extends MainController
     {
         if (!empty($_POST)) {
 
-            if (!empty($_FILES['name'])) {
-                $data['image'] = $this->files->uploadFile('img/user');
-            }
-
             $data['pass']   = password_hash($_POST['pass'], PASSWORD_DEFAULT);
             $data['name']   = $_POST['name'];
             $data['email']  = $_POST['email'];
 
             ModelFactory::getModel('User')->updateData(filter_input(INPUT_GET,'id'), $data);
 
-
             $this->redirect('home');
         }
-        $user = ModelFactory::getModel('User')->readData((filter_input(INPUT_GET,'id'));
+        $user = ModelFactory::getModel('User')->readData(filter_input(INPUT_GET,'id'));
 
-        return $this->render('user/updateUser.twig', ['user' => $user]);
+        return $this->twig->render('user/updateUser.twig', ['user' => $user]);
     }
 
     public function deleteMethod()
     {
-        ModelFactory::getModel('User')->deleteData((filter_input(INPUT_GET,'id'));
+        ModelFactory::getModel('User')->deleteData(filter_input(INPUT_GET,'id'));
 
         $this->redirect('home');
     }
