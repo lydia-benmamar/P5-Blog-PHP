@@ -81,7 +81,7 @@ class UserController extends MainController
     {
         if (!empty($_POST)) {
 
-            if (!empty($this->files->getFileVar('name'))) {
+            if (!empty($_FILES['name'])) {
                 $data['image'] = $this->files->uploadFile('img/user');
             }
 
@@ -89,19 +89,19 @@ class UserController extends MainController
             $data['name']   = $_POST['name'];
             $data['email']  = $_POST['email'];
 
-            ModelFactory::getModel('User')->updateData($this->get->getGetVar('id'), $data);
+            ModelFactory::getModel('User')->updateData(filter_input(INPUT_GET,'id'), $data);
 
 
             $this->redirect('home');
         }
-        $user = ModelFactory::getModel('User')->readData($this->get->getGetVar('id'));
+        $user = ModelFactory::getModel('User')->readData((filter_input(INPUT_GET,'id'));
 
         return $this->render('user/updateUser.twig', ['user' => $user]);
     }
 
     public function deleteMethod()
     {
-        ModelFactory::getModel('User')->deleteData($this->get->getGetVar('id'));
+        ModelFactory::getModel('User')->deleteData((filter_input(INPUT_GET,'id'));
 
         $this->redirect('home');
     }
