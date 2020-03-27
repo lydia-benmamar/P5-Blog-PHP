@@ -1,17 +1,17 @@
 <?php
 
-namespace Pam\Controller\Globals;
+namespace App\Controller;
 
 /**
  * Class SessionController
- * @package Pam\Controller
+ * @package App\Controller
  */
-class SessionController
+abstract class SessionController
 {
     /**
      * @var array|mixed
      */
-    private $session = null;
+    protected $session = null;
 
     /**
      * SessionController constructor.
@@ -24,16 +24,16 @@ class SessionController
     /**
      * @param int $id
      * @param string $name
-     * @param string $image
      * @param string $email
+     * @param bool $admin
      */
-    public function createSession(int $id, string $name, string $image, string $email)
+    public function createSession(int $id, string $name, string $email, bool $admin)
     {
         $_SESSION['user'] = [
             'id'    => $id,
             'name'  => $name,
-            'image' => $image,
-            'email' => $email
+            'email' => $email,
+            'admin' => $admin
         ];
     }
 
