@@ -29,12 +29,16 @@ abstract class SessionController
      */
     public function createSession(int $id, string $name, string $email, bool $admin)
     {
-        $_SESSION['user'] = [
+
+        $_SESSION['user'] = array(
             'id'    => $id,
             'name'  => $name,
             'email' => $email,
             'admin' => $admin
-        ];
+        );
+
+
+
     }
 
     /**
