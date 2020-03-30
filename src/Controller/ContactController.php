@@ -20,6 +20,6 @@ class ContactController extends MainController
      */
     public function defaultMethod()
     {
-        return $this->twig->render('layout/ContactForm.twig');
+        return $this->twig->render('layout/contactForm.twig');
     }
 }
